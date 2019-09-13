@@ -1,0 +1,17 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: run single script
+      run: echo hello,world!
+    - name: run multiline script
+      run: |
+           echo this is a multi line script
+           echo multi line script works
