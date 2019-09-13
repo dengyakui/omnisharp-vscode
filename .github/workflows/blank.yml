@@ -39,4 +39,9 @@ jobs:
         echo GITHUB_REF is $GITHUB_REF
         echo GITHUB_HEAD_REF is $GITHUB_HEAD_REF
         echo GITHUB_BASE_REF is $GITHUB_BASE_REF
+    
+    - name: use secrets
+      with: 
+        tag_name: {{secrets.TAG_NAME}}
+      run: echo tag name is: $tag_name
         
