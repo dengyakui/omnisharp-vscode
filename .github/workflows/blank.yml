@@ -15,9 +15,9 @@ jobs:
       run: |
         git checkout -b installme $tag_name
         mkdir artifact
-        echo hello > artifact/ouput.txt
-        
-    
+        npm run compile
+        npm run gulp vsix:offline:package
+        cp *.vsix ./artifact/
     - uses: actions/upload-artifact@master
       with: 
         name: artifact
