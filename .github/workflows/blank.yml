@@ -9,40 +9,18 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    
-    - name: run single script
-      run: echo hello,world!
-      
-    - name: run multiline script
-      run: |
-           echo this is a multi line script
-           echo multi line script works
-           
-    - name: work with varialbes
+    - name: switch branch to latest release
       env:
-        FIRST_NAME: "foo"
-        LAST_NAME: "bar"
-        MSG: "hello,world"
-      run: |
-        echo ${FISRT_NAME} $LAST_NAME $MSG works!
-    - name: print predefined varialbes
-      run: |
-        echo HOME is: $HOME
-        echo GITHUB_WORKFLOW is $GITHUB_WORKFLOW
-        echo GITHUB_ACTION is $GITHUB_ACTION
-        echo GITHUB_ACTOR is $GITHUB_ACTOR
-        echo GITHUB_REPOSITORY is $GITHUB_REPOSITORY
-        echo GITHUB_EVENT_NAME is $GITHUB_EVENT_NAME
-        echo GITHUB_EVENT_PATH is $GITHUB_EVENT_PATH
-        echo GITHUB_WORKSPACE is $GITHUB_WORKSPACE
-        echo GITHUB_SHA is $GITHUB_SHA
-        echo GITHUB_REF is $GITHUB_REF
-        echo GITHUB_HEAD_REF is $GITHUB_HEAD_REF
-        echo GITHUB_BASE_REF is $GITHUB_BASE_REF
-    
-    - name: use secrets
-      env: 
-        tag_name: ${{secrets.TAG_NAME}}
+        tag_name: ${{secrest.TAG_NAME}}
       run: |
         git checkout -b installme $tag_name
+        mkdir artifact
+        echo hello > artifact/ouput.txt
+        
+    
+    - uses: actions/upload-artifact@master
+      with: 
+        name: artifact
+        path: artifact
+        
         
