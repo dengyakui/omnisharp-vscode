@@ -10,8 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1
-        with:
-          node-version: '10.x'
+      with:
+        node-version: '10.x'
     - name: switch branch to latest release
       env:
         tag_name: ${{secrets.TAG_NAME}}
