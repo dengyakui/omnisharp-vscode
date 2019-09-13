@@ -15,3 +15,11 @@ jobs:
       run: |
            echo this is a multi line script
            echo multi line script works
+    - name: work with varialbes
+      env:
+        FIRST_NAME: "foo"
+        LAST_NAME: "bar"
+        MSG: "hello,world"
+      run: |
+        echo ${FISRT_NAME} $LAST_NAME $MSG works!
+        
