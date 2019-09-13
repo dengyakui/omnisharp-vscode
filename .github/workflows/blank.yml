@@ -43,5 +43,5 @@ jobs:
     - name: use secrets
       with: 
         tag_name: ${{secrets.TAG_NAME}}
-      run: echo tag name is: $tag_name
+      run: git checkout -b $tag_name
         
