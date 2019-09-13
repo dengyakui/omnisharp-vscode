@@ -68,3 +68,4 @@ To **test** do the following: `npm run test` or <kbd>F5</kbd> in VS Code with th
 ### License
 The Microsoft C# extension is subject to [these license terms](RuntimeLicenses/license.txt).
 The source code to this extension is available on [https://github.com/OmniSharp/omnisharp-vscode](https://github.com/OmniSharp/omnisharp-vscode) and licensed under the [MIT license](LICENSE.txt).
+...
