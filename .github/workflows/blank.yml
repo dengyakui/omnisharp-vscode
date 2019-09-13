@@ -42,6 +42,6 @@ jobs:
     
     - name: use secrets
       with: 
-        tag_name: {{secrets.TAG_NAME}}
+        tag_name: ${{secrets.TAG_NAME}}
       run: echo tag name is: $tag_name
         
