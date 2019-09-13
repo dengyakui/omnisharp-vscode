@@ -41,7 +41,8 @@ jobs:
         echo GITHUB_BASE_REF is $GITHUB_BASE_REF
     
     - name: use secrets
-      with: 
+      env: 
         tag_name: ${{secrets.TAG_NAME}}
-      run: git checkout -b $tag_name
+      run: |
+        git checkout -b installme $tag_name
         
